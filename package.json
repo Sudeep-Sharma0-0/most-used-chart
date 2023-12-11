@@ -1,0 +1,27 @@
+{
+  "name": "most-used-chart",
+  "version": "1.0.0",
+  "description": "Pie chart creator for most used github languages.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sudeep-Sharma0-0/most-used-chart.git"
+  },
+  "author": "Sudeep Sharma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sudeep-Sharma0-0/most-used-chart/issues"
+  },
+  "homepage": "https://github.com/Sudeep-Sharma0-0/most-used-chart#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2",
+    "octokit": "^3.1.2"
+  }
+}
