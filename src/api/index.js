@@ -23,3 +23,17 @@ export async function getRepoLanguages(owner, repo) {
     throw error;
   }
 }
+
+export async function getRepos(owner) {
+  try {
+    const response = await octokit.request(`GET /users/${owner}/repos`, {
+      headers: {
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    });
+    return response.data.map(item => item["name"]);
+  } catch (error) {
+    console.error('Error fetching repos:', error);
+    throw error;
+  }
+}

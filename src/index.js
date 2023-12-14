@@ -2,7 +2,7 @@ import express from "express";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import path from "path";
-import { getRepoLanguages } from "./api/index.js";
+import { getLangs } from "./getLangs.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -18,15 +18,8 @@ router.get("/", (req, res) => {
 
 router.get("/api", async (req, res) => {
   let username = req.query.username;
-  let repo = req.query.repo;
 
-  let langs = await getRepoLanguages(username, repo);
-  let totalUsage = Object.values(langs).reduce((a, b) => a + b, 0);
-  let percentUsage = Object.values(langs).map(usage => (usage / totalUsage) * 100);
-  Object.keys(langs).forEach((key, index) => {
-    langs[key] = percentUsage[index].toFixed(2);
-  })
-
+  let langs = await getLangs(username);
   res.render(path.join(staticPath, "index.ejs"), { langs });
 });
 
