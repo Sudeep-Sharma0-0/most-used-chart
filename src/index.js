@@ -7,9 +7,12 @@ import { getLangs } from "./getLangs.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const staticPath = path.join(__dirname, "static");
+const viewPath = path.join(__dirname, "views");
 
 const app = express();
 app.set('view engine', 'ejs');
+app.set('views', viewPath);
+app.use(express.static(staticPath));
 
 const router = express.Router();
 router.get("/", (req, res) => {
@@ -20,7 +23,7 @@ router.get("/api", async (req, res) => {
   let username = req.query.username;
 
   let langs = await getLangs(username);
-  res.render(path.join(staticPath, "index.ejs"), { langs });
+  res.render(path.join(viewPath, "index.ejs"), { langs });
 });
 
 app.use("/", router);
