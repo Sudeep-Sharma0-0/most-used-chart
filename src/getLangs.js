@@ -29,6 +29,11 @@ export async function getLangs(username) {
 
   let keyValueArray = Object.entries(langs);
   keyValueArray.sort((a, b) => b[1] - a[1]);
+
+  let otherLangs = keyValueArray.splice(6);
+  let otherUsage = ["Others", otherLangs.reduce((use, next) => parseFloat(use) + parseFloat(next[1]), 0).toFixed(2)];
+
+  keyValueArray.push(otherUsage);
   langs = Object.fromEntries(keyValueArray);
 
   return langs;
