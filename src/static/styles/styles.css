@@ -1,15 +1,11 @@
+#content {
+  display: flex;
+  background: #f2f2f2;
+  width: 30rem;
+}
 .pie-chart {
   position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: conic-gradient(
-    #f00 0% 14.28%,
-    #0f0 14.28% 28.56%,
-    #00f 28.56% 42.84%,
-    #ff0 42.84% 57.12%,
-    #0ff 57.12% 71.4%,
-    #f0f 71.4% 85.68%,
-    #ff00ff 85.68% 100%
-  );
 }

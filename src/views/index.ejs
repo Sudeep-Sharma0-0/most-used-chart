@@ -10,14 +10,18 @@
 
 <body>
   <div id="root">
-    <div class="pie-chart">
-    </div>
-    <% Object.entries(langs).forEach(([lang, usage], index)=> { %>
-      <div class="lang lang-<%= index %>">
-        <%= lang %>:
-          <%= usage %>%
+    <div id="content">
+      <div class="pie-chart" style="<%= styles %>">
       </div>
-      <% }) %>
+      <div>
+        <% Object.entries(langs).forEach(([lang, usage], index)=> { %>
+          <div class="lang lang-<%= index %>">
+            <%= lang %>:
+              <%= usage %>%
+          </div>
+          <% }) %>
+      </div>
+    </div>
   </div>
 </body>
 
