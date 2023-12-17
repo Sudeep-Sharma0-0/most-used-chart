@@ -1,15 +1,44 @@
+* {
+  color: skyblue;
+  font: 18px sans-serif;
+  margin: 0;
+  padding: 0;
+}
+#root {
+  width: 25rem;
+  background: #1a1b27;
+  border-radius: 1rem;
+  padding-bottom: .6rem;
+}
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+#content {
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .pie-chart {
   position: relative;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: conic-gradient(
-    #f00 0% 14.28%,
-    #0f0 14.28% 28.56%,
-    #00f 28.56% 42.84%,
-    #ff0 42.84% 57.12%,
-    #0ff 57.12% 71.4%,
-    #f0f 71.4% 85.68%,
-    #ff00ff 85.68% 100%
-  );
+}
+.lang {
+  margin: 4px;
+  position: relative;
+}
+.lang::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background: red;
+  border-radius: 50%;
+  left: -20px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
 }
