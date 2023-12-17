@@ -9,7 +9,7 @@ export function getColor(lang, file) {
     if (data[lang] && data[lang].color) {
       return data[lang].color;
     } else if (lang === "Others") {
-      return "#000";
+      return "#f46fc6";
     } else {
       return 'Color not found for this language';
     }

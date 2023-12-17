@@ -39,7 +39,12 @@ router.get("/api", async (req, res) => {
   });
   styles += "\n);";
 
-  res.render(path.join(viewPath, "index.ejs"), { langs, styles });
+  let colors = {};
+  langKeys.forEach((lang) => {
+    colors[lang] = getColor(lang, path.join(staticPath, "languages.yml"));
+  });
+
+  res.render(path.join(viewPath, "index.ejs"), { langs, styles, colors });
 });
 
 app.use("/", router);
